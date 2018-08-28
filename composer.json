@@ -1,0 +1,30 @@
+{
+  "name": "hiroiku/wpserver",
+  "description": "WordPress built in server",
+  "version": "1.0.0",
+  "type": "project",
+  "license": "ISC",
+  "authors": [{
+    "name": "Hiroiku Inoue"
+  }],
+  "config": {
+    "process-timeout": 0
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "composer wp cli update"
+    ],
+    "wp": [
+      "./wp"
+    ],
+    "wp:download": [
+      "./wp core download --path=public"
+    ],
+    "wp:update": [
+      "./wp core update --path=public"
+    ],
+    "start": [
+      "@php -S 0.0.0.0:8080 -t public bootstrap.php"
+    ]
+  }
+}
